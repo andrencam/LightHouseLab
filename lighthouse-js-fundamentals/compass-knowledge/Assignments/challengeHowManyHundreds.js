@@ -11,9 +11,9 @@ howManyHundreds(0);	    0
 */
 
 const howManyHundreds = function (numb) {
-  output = Math.floor(numb / 100).toFixed(0)
-  return Number(output)
-}
+  let output = Math.floor(numb / 100).toFixed(0);
+  return Number(output);
+};
 
 console.log(howManyHundreds(1000), "=?", 10);
 console.log(howManyHundreds(894), "=?", 8);
