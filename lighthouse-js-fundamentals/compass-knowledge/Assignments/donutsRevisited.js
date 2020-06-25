@@ -6,5 +6,13 @@ var donuts = [
 ];
 
 donuts.forEach((element) => {
-  console.log(element.type + " donuts cost $" + element.cost.toLocaleString("en-US") + " each");
+  console.log(element.type + " donuts cost $" + element.cost.toLocaleString("en-US") + " forEach");
+})
+
+donuts.map((element) => {
+  console.log(element.type + " donuts cost $" + element.cost.toLocaleString("en-US") + " map");
+})
+
+donuts.filter((element) => {
+  console.log(element.type + " donuts cost $" + element.cost.toLocaleString("en-US") + " filter");
 })

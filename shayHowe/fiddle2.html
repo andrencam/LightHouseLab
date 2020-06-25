@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <img id='lhl-logo' src='https://cl.ly/2O3Y2w1R2j0v/Image%202016-07-20%20at%201.16.13%20PM.png' width='400' />
+  <h2>
+    List of People:
+  </h2>
+
+  <ul class='people'>
+    <li class='name'>
+      Clara
+    </li>
+    <li class='name'>
+      James
+    </li>
+    <li class='name'>
+      Sara
+    </li>
+  </ul>
+</body>
+
+<script>
+  let names = []
+  let elements = document.querySelectorAll(".name")
+  let newArray = Array.prototype(elements)
+  for (let i = 0; i < newArray.length; i++) {
+    names.push(newArray[i])
+  }
+  alert(names)
+
+  let img = document.getElementById('lhl-logo').width = '200';
+
+  let call = function () {
+    document.getElementById('lhl-logo').width = '400'
+  }
+  setTimeout(call, 3000)
+
+</script>
+
+</html>

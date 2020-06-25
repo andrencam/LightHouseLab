@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation Project</title>
+</head>
+
+<body>
+  <link rel="stylesheet" href="styleAnimation.css">
+  <div id="container">
+    <h1>My animation project!</h1>
+    <input type="text" id="convert" value="" onchange="convert()">
+    <div id="animation"></div>
+  </div>
+  <p><button onclick="myMove()">Animate!</button></p>
+  <button onclick="changeColor()">Click me!</button>
+  <button onclick="hideMe()">Hide me!</button>
+  <button onclick="displayDate()">The time is?</button>
+  <p id="time">My time</p>
+  <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+    style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+    Mouse Over Me</div>
+</body>
+<script>
+  const sayHello = function () {
+    alert("Hello");
+  }
+  setTimeout(sayHello, 3000);
+
+  function convert() {
+    let upper = document.getElementById("convert")
+    upper.value = upper.value.toUpperCase()
+  }
+
+  function mOver(obj) {
+    obj.innerHTML = "Thank You"
+  }
+
+  function mOut(obj) {
+    obj.innerHTML = "Mouse Over Me"
+  }
+
+  function changeColor() {
+    let color = document.getElementById("container")
+    if (color.style.background === 'yellow') {
+      color.style.background = "green"
+    } else {
+      color.style.background = "yellow"
+    }
+  }
+
+  function displayDate() {
+    document.getElementById("time").innerHTML = Date();
+  }
+
+  function hideMe() {
+    let color = document.getElementById("animation")
+    if (color.style.background === 'red') {
+      color.style.background = "black"
+      color.style.display = "flex"
+    } else {
+      color.style.background = "red"
+      color.style.display = "none"
+    }
+  }
+
+  function myMove() {
+    let elem = document.getElementById("animation")
+    let position = 0
+    let id = setInterval(frame, 5)
+    function frame() {
+      if (position === 350) {
+        clearInterval(id)
+      } else {
+        position++
+        elem.style.top = position + 'px'
+        elem.style.left = position + 'px'
+      }
+    }
+  }
+</script>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My web site</title>
+  <script>
+    // run this function when the document is loaded
+    window.onload = function () {
+
+      // create a couple of elements in an otherwise empty HTML page
+      const heading = document.createElement("h1");
+      const heading_text = document.createTextNode("Big Head!");
+      heading.appendChild(heading_text);
+      document.body.appendChild(heading);
+    }
+
+    const paragraphs = document.getElementsByTagName("p");
+    // paragraphs[0] is the first <p> element
+    // paragraphs[1] is the second <p> element, etc.
+    alert(paragraphs[0].nodeName);
+
+  </script>
+</head>
+
+<body>
+  <h1>
+    <a href="index.html">Styles Conference</a>
+  </h1>
+
+  <h1 id="top">My top page</h1>
+  <header>Another title
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="venue.html">Venue</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+  <a href="mailto:andrencampos@shaw.ca?subject=Reaching%20out%20&body=My%20text%20example%0AHow%20are%20you">Email
+    me</a>
+  <a href="www.mysite.ca" target="_blank">Open link</a>
+  <section>author <article> aritucle test </article>
+    <section>
+
+      ...
+
+      <a href="register.html">Register Now</a>
+      <section>
+        <a href="speakers.html">
+          <h5>Speakers</h5>
+          <h3>World-Class Speakers</h3>
+        </a>
+        <p>Joining us from all around the world are over twenty fantastic speakers, here to share their stories.</p>
+      </section>
+
+      ...
+    </section>
+
+  </section>
+  <aside> links </aside>
+
+
+  <div>
+    <h1>This is a test page H1 Tag</h1>
+    <p>My paragraph Tag P
+    <p class="p2">Every year the brightest web designers and front-end developers descend on Chicago to discuss the
+      latest technologies. Join us this August!</p>
+    </p>
+  </div>
+  <!-- Division -->
+  <div class="social">
+    <p>I may be found on...</p>
+    <p>Additionally, I have a profile on...</p>
+  </div>
+
+  <!-- Span -->
+  <p>Soon we'll be <span class="tooltip">writing HTML</span> with the best of them.</p>
+  <!-- Strong importance -->
+  <p><strong>Caution:</strong> Falling rocks.</p>
+
+  <!-- Stylistically offset -->
+  <p>This recipe calls for <b>bacon</b> and <b>baconnaise</b>.</p>
+  <!-- Stressed emphasis -->
+  <p>I <em>love</em> Chicago!</p>
+
+  <!-- Alternative voice or tone -->
+  <p>The name <i>Shay</i> means a gift.</p>
+
+  <link rel="stylesheet" href="style.css">
+
+  <body onload="window.alert('Welcome to my home page!');"></body>
+
+  <a id="bottom" href="#top">Back to top page</a>
+  <footer>Footer page
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="venue.html">Venue</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </footer>
+</body>
+
+</html>

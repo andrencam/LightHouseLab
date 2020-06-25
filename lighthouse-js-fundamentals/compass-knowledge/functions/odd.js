@@ -1,9 +1,8 @@
-function isOdd(number) {
+function check(number) {
   if (number % 2 === 0) {
     return "even"
   } else {
     return "odd"
   }
 }
-console.log("3 is odd: " + isOdd(3));
-console.log("8 is odd: " + isOdd(8));
+console.log(`is ${check(6)}`);
