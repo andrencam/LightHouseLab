@@ -4,19 +4,12 @@
  * 
  */
 const verifyTax = function (values, rates) {
-  let new2017 = 0
-  let new2018 = 0
-  let new2019 = 0
-  values.forEach(element => {
-    if (element['income'] === 2017) {
-      console.log('encontrou')
-    }
-    console.log('nao encontrou')
+  for (let y = 0; y < values.length; y++) {
+    console.log(values[y])
+  }
 
+}
 
-
-  });
-};
 
 let values = [
   {
