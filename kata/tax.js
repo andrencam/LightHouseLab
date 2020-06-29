@@ -3,15 +3,16 @@
  * output: Ligia: 2017 = 12345, 2018 = xxxxx, 2019 = xxxx
  * 
  */
-const verifyTax = function (values, rates) {
-  for (let y = 0; y < values.length; y++) {
-    console.log(values[y])
-  }
-
+const taxResult = () => {
+  persons.forEach((element) => {
+    element.income.forEach(element => {
+      let year2017 = element[2017] * 2
+      console.log(year2017)
+    })
+  })
 }
 
-
-let values = [
+let persons = [
   {
     nome: "Andre",
     income: [
@@ -37,17 +38,14 @@ let values = [
 
 let rates = [
   {
-    year: 2017,
-    rate: 0.4071
+    2017: 0.4071
   },
   {
-    year: 2018,
-    rate: 0.3566
+    2018: 0.3566
   },
   {
-    year: 2019,
-    rate: 0.3371
+    2019: 0.3371
   }
 ]
 
-console.log(verifyTax(values, rates))
+console.log(taxResult())
