@@ -12,25 +12,35 @@ Nima's Famous Dijon Raisins
  */
 
 const chooseRecipe = function (bakeryA, bakeryB, recipes) {
-    recipes.forEach((recipes) => {
 
-        recipes.ingredients.forEach(ingredients => {
+    recipes.forEach((recipe) => {
+        let ingredientStatus = []
+        recipe.ingredients.forEach((ingredient, index) => {
+            let ingredientFound = false
+            if (bakeryA.includes(ingredient)) {
+                ingredientFound = true;
+            }
 
-            bakeryA.forEach(bakeryA => {
+            if (!ingredientFound && bakeryB.includes(ingredient)) {
+                ingredientFound = true;
+            }
 
-                bakeryB.forEach(bakeryB => {
+            if (ingredientFound) {
+                ingredientStatus[index] = 'found'
+            }
 
-                    if (ingredients === bakeryA && ingredients === bakeryB) {
-                        console.log('got it')
-                        return recipes.name
-                    } else {
-                        // console.log('not found')
-                    }
-                })
-            })
+            else {
+                ingredientStatus[index] = 'not Found'
+            }
+
         })
+        if (ingredientStatus.indexOf('not Found') < 0) {
+            console.log(recipe.name)
+        }
+
     })
 }
+
 
 let bakeryA = ['saffron', 'eggs', 'tomato paste', 'coconut', 'custard'];
 let bakeryB = ['milk', 'butter', 'cream cheese'];
@@ -49,7 +59,7 @@ let recipes = [
     }
 ];
 
-console.log(chooseRecipe(bakeryA, bakeryB, recipes));
+chooseRecipe(bakeryA, bakeryB, recipes);
 
 bakeryA = ['potatoes', 'bay leaf', 'raisins'];
 bakeryB = ['red bean', 'dijon mustard', 'apples'];
@@ -67,5 +77,4 @@ recipes = [
         ingredients: ['dijon mustard', 'raisins']
     }
 ];
-
-console.log(chooseRecipe(bakeryA, bakeryB, recipes));
+chooseRecipe(bakeryA, bakeryB, recipes);
