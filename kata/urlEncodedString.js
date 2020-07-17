@@ -23,26 +23,16 @@ Expected Output
 
 
 const urlDecode = function (text) {
-  let arrString = text.split('')
-  let prop = ["=", "&", "%20"];
-  let url = {}
-  for (let i = 0; i < arrString.length; i++) {
-    if (prop.includes(arrString[i]) && arrString[i] == '=') {
-      url.arrString.substring(0, arrString[i].length) = ''
-      console.log(url)
-    }
-    else if (prop.includes(arrString[i]) && arrString[i] == "&") {
-      console.log('i found &')
-    }
-    else if (prop.includes(arrString[i]) && arrString[i] == "%20") {
-      console.log('i found &20')
-    }
+  text = text.split('&').map((e, i) => e.split('='))
+  obj = {}
+  for (let arr of text) {
+    obj[arr[0]] = arr[1].split("%20").join(' ');
+    // console.log(obj)
   }
-  let result = arrString.join('');
-  return result;
-};
+  return obj
+}
 
-// console.log(urlDecode("duck=rubber"));
-// console.log(urlDecode("bootcamp=Lighthouse%20Labs"));
+console.log(urlDecode("duck=rubber"));
+console.log(urlDecode("bootcamp=Lighthouse%20Labs"));
 console.log(urlDecode("city=Vancouver&weather=lots%20of%20rain"));
-// console.log(urlDecode("city=Vancouver&weather=lots%20of%20rain").weather);
+console.log(urlDecode("city=Vancouver&weather=lots%20of%20rain").weather);
